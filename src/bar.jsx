@@ -8,7 +8,7 @@ function Progress(){
     )
 }
 
-// кнопочки
+// -------------------Player__Controls----------------------//
 
 function ButtonPrevious(){
     return(
@@ -72,7 +72,7 @@ function PlayerControls() {
     )
 }
 
-// TrackPlay
+// ------------------------------Player__Track-Play-----------------------//
 
 function TrackPlayImage(){
     return(
@@ -149,7 +149,7 @@ function PlayerTrackPlay(){
 }
 
 
-// плеер
+// ----------------------------Bar__Player-------------------------//
 
 function BarPlayer(){
     return(
@@ -160,7 +160,7 @@ function BarPlayer(){
     )
 }
 
-// звук
+// ----------------------------Bar__Volume---------------------------//
 
 function VolumeImage() {
     return(

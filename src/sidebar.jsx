@@ -1,5 +1,8 @@
 import './css/style.css';
 
+
+ // ------------------------------ SideBar-------------------------- //
+
 function UserName() {
     return(
         <p className='sidebar__personal-name'>Sergey.Ivanov</p>

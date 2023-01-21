@@ -29,6 +29,7 @@ function Filter() {
     )
 }
 
+// --------------------------CenterBlock__Content-------------------//
 
 const tracks = [
     {id: 1, author: 'Nero', album: 'Welcome Reality', title: 'Guilt', time: '4:44'},
@@ -58,7 +59,65 @@ function ContentPlaylistTitle(){
         </div>
     )
 }
+/** 
+function TrackTitleImage(){
+    return(
+        <div className='track__title-image'>
+            <svg className='track__title-svg' alt='music'>
+                <use xlinkHref='img/icon/sprite.svg#icon-note' />
+            </svg>
+        </div>
+    )
+}
 
+function TrackTitleText(props){
+    return(   
+       <div className='track__title-text'>
+        <a className='track__title-link' href={props.link}>
+            {props.title}<span className='track__title-span' />
+        </a>
+       </div>
+    )
+}
+
+
+function TrackTitle() {
+    return(
+        <div className='track__title'>
+            <TrackTitleImage />
+            <TrackTitleText />
+        </div>
+    )
+}
+ 
+function TrackAuthor(props) {
+    return(
+        <div className='track__author'>
+            <a className='track__author-link' href={props.link}>{props.text}</a> 
+        </div>
+    )
+}
+
+function TrackAlbum(props) {
+    return(
+    <div className='track__album' >
+        <a className='track__album-link' href={props.link}>{props.album}</a>
+    </div>
+    )
+}
+
+function TrackTime(props) {
+    return(
+    <div className='track__time' >
+            <svg className='track__time-svg' alt='time'>
+                <use xlinkHref='img/icon/sprite.svg#icon-like' />
+            </svg>
+            <span className='track__time-text'>{props.time}</span>
+        </div>
+    )
+} 
+   
+*/
 function PlayListItem({author, album, time, title, subtitle}) {
     return(
         <div className='playlist__item'>
@@ -92,6 +151,20 @@ function PlayListItem({author, album, time, title, subtitle}) {
 
 
 }
+/**  
+function PlayListItem(){
+    return(
+        <div className='playlist__item'>
+            <div className='playlist__track track'>
+                <TrackTitle />
+                <TrackAuthor />
+                <TrackAlbum />
+                <TrackTime />
+            </div>
+        </div>
+    )
+}
+*/
 
 function ContentPlaylistPlaylist() {
     return(
@@ -116,6 +189,7 @@ function CenterBlockContent(){
     )
 }
 
+// ------------------------------------ //
 
 function MainCenterBlock() {
     return(

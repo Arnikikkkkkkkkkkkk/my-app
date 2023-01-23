@@ -1,11 +1,11 @@
 import './css/style.css';
-
+import { useState, useEffect } from 'react';
 
  // ------------------------------ SideBar-------------------------- //
 
 function UserName() {
     return(
-        <p className='sidebar__personal-name'>Sergey.Ivanov</p>
+        <p className='sidebar__personal-name'>Biba and Boba</p>
     )
 }
 
@@ -25,6 +25,7 @@ function SidebarPersonal() {
 }
 
 function SidebarItem(props) {
+
     return(
         <div className='sidebar__item'>
             <a className='sidebar__link' href='http://'>
@@ -34,12 +35,44 @@ function SidebarItem(props) {
     )
 }
 
-function SidebarList() {
+function SidebarSkeleton() {
     return(
         <div className='sidebar__item'>
-            <SidebarItem image = "playlist01.png" />
-            <SidebarItem image = "playlist02.png" />
-            <SidebarItem image = "playlist03.png" />
+            <div className='skeleton_picture'></div>
+        </div>
+    )
+}
+
+function SidebarList() {
+    const [skeleton, setSkeleton] = useState(false);
+  
+    useEffect(() => {
+        setSkeleton(true);
+        setTimeout(async () => {
+
+            setSkeleton(false);
+
+        }, 5000);
+    }, []);
+ 
+    return(
+        <div className='sidebar__item'>
+            {!skeleton ?
+            (<>
+                <SidebarItem image = "playlist01.png" />
+                <SidebarItem image = "playlist02.png" />
+                <SidebarItem image = "playlist03.png" />
+            </>)
+                
+                :
+            (<>
+                <SidebarSkeleton />
+                <SidebarSkeleton />
+                <SidebarSkeleton />
+            </>)
+                
+
+            }
         </div>
     )
 }

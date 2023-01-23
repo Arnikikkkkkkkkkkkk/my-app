@@ -1,4 +1,5 @@
 import './css/style.css';
+import { useState, useEffect } from 'react';
 
 
 
@@ -100,12 +101,60 @@ function TrackPlayAlbum(props){
     )
 }
 
+function TrackPlaySkeletonImage() {
+    return(
+        <div className='track-play__image'>
+            <div className='skeleton__track_image'></div>
+        </div>
+        )
+}
+
+function TrackPlaySkeletonAuthor() {
+    return(
+        <div className='track-play__author'>
+            <div className='skeleton__track_author'></div>
+        </div>
+    )
+}
+
+function TrackPlaySkeletonAlbum(){
+    return(
+        <div className='track-play__album'>
+            <div className='skeleton__track_album'></div>
+        </div>
+    )
+}
+
 function TrackPlayContain(){
+    const [skeleton, setSkeleton] = useState(false);
+  
+    useEffect(() => {
+        setSkeleton(true);
+        setTimeout(async () => {
+
+            setSkeleton(false);
+
+        }, 5000);
+    }, []);
+
     return(
         <div className='track-play__contain'>
-            <TrackPlayImage />
+             {!skeleton ?
+             (
+            <>
+             <TrackPlayImage />
             <TrackPlayAuthor text='Ты та...'/>
             <TrackPlayAlbum text='Баста'/>
+            </>) :
+            (
+                <>
+                <TrackPlaySkeletonImage />
+                <TrackPlaySkeletonAuthor />
+                <TrackPlaySkeletonAlbum />
+                </>
+            )
+}
+           
         </div>
     )
 }

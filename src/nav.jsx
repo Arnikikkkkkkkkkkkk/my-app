@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './css/style.css';
 import logo from './logo.png'
 
@@ -10,16 +11,6 @@ function Logo() {
 }
 
 
-
-function Burger() {
-    return (
-        <div className="nav__burger burger">
-            <span className="burger__line" />
-            <span className="burger__line" />
-            <span className="burger__line" />
-        </div>
-    );
-}
 
 function Menu() {
     return(
@@ -40,13 +31,29 @@ function Menu() {
 }
 
 function Navigation() {
-    return(
+    const [isMenuOpen, setVisible] = useState(false);
+
+    const toggleVisibility = () => setVisible((isOpen) => !isOpen);
+    
+    return (
         <nav className="main__nav nav">
             <Logo />
-            <Burger />
-            <Menu />
+            <div className="nav__burger burger" onClick={toggleVisibility} aria-hidden="true" role="button" tabIndex={0}>
+            <span className="burger__line"  />
+            <span className="burger__line" />
+            <span className="burger__line" />
+           
+            </div>
+            {isMenuOpen && (
+                    
+                <Menu />
+                
+            )}
         </nav>
+        
+        
     );
+   
 }
 
 export default Navigation;

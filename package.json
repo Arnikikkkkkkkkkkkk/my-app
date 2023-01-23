@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "music_service",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,8 +36,13 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.32.0",
-    "eslint-plugin-react": "^7.32.1",
-    "prettier": "2.8.3"
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.8.1"
   }
 }

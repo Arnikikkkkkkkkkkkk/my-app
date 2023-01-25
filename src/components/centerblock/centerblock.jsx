@@ -1,72 +1,90 @@
-import './css/style.css';
+
 import { useState, useEffect, useRef } from 'react';
+import * as Styled from './styles'
 
 function Search() {
     return(
-        <div className='centerblock__search search'>
-            <svg className='search__svg'>
+        <Styled.CenterblockSearch>
+            <Styled.SearchSvg>
                 <use xlinkHref='public/icon/sprite.svg#icon-search' />
-            </svg>
-            <input className='search__text' type='search' placeholder='Поиск' name='search' />
-        </div>
+            </Styled.SearchSvg>
+            <Styled.SearchText type='search' placeholder='Поиск' name='search' />
+        </Styled.CenterblockSearch>
     )
 }
 
 function Title() {
     return(
-        <h2 className='centerblock__h2'>Треки</h2>
+        <Styled.CenterblockTitle>Треки</Styled.CenterblockTitle>
     )
 }
 
 function FilterButtonAuthor() {
     
     return(
-        <div className='dropdown performer'>
+        <Styled.DropdownPerformer>
 
-                <ul className='dropdown__list'>
-                    <li className='dropdown_item'>Michael Jackson</li>
-                    <li className='dropdown_item'>Frank Sinatra</li>
-                    <li className='dropdown_item'>Calvin Harris</li>
-                    <li className='dropdown_item'>Zhu</li>
-                    <li className='dropdown_item'>Arctic Monkeys</li>
-                </ul>     
-        </div> 
+                <Styled.DropdownList>
+                    <Styled.DropdownItem>Michael Jackson</Styled.DropdownItem>
+                    <Styled.DropdownItem>Frank Sinatra</Styled.DropdownItem>
+                    <Styled.DropdownItem>Calvin Harris</Styled.DropdownItem>
+                    <Styled.DropdownItem>Zhu</Styled.DropdownItem>
+                    <Styled.DropdownItem>Arctic Monkeys</Styled.DropdownItem>
+                </Styled.DropdownList>     
+        </Styled.DropdownPerformer> 
     )
 }
 
 function FilterButtonGenre() {
     
     return(
-        <div className='dropdown genre'>
-                <ul className='dropdown__list'>
-                    <li className='dropdown_item'>Рок</li>
-                    <li className='dropdown_item'>Хип-Хоп</li>
-                    <li className='dropdown_item'>Поп-музыка</li>
-                    <li className='dropdown_item'>Техно</li>
-                    <li className='dropdown_item'>Инди</li>
-                </ul>     
-        </div> 
+        <Styled.DropdownGenre>
+                <Styled.DropdownList>
+                    <Styled.DropdownItem>Рок</Styled.DropdownItem>
+                    <Styled.DropdownItem>Хип-Хоп</Styled.DropdownItem>
+                    <Styled.DropdownItem>Поп-музыка</Styled.DropdownItem>
+                    <Styled.DropdownItem>Техно</Styled.DropdownItem>
+                    <Styled.DropdownItem>Инди</Styled.DropdownItem>
+                </Styled.DropdownList>     
+        </Styled.DropdownGenre> 
     )
 }
 
 function FilterButtonYear() {
-    const [currentRadioValue, setVariableName] = useState()
+    
+    const [select, setSelect] = useState("optionA");
 
+    const handleSelectChange = (event) => {
+      const{ value } = event.target;
+      setSelect(value);
+    };
   
     return(
-        <div className='year'>
-            <label htmlFor="new">
-                <span className="custom-radio-btn" />
-                <input className='year__input' type='radio' value='new' id='new' name='year' onChange={() =>
-                setVariableName("new")} checked={currentRadioValue === 'new'}/> 
-            Более новые</label>
-            <label htmlFor="old">
-                <span className="custom-radio-btn" />
-                <input className='year__input' type='radio' value='old' id='old' name='year' onChange={() =>
-                setVariableName("old")} checked={currentRadioValue === 'old'}/> 
-            Более старые</label>
-           
-        </div>
+        <Styled.Year>
+            <Styled.Item>
+                <Styled.RadioButton
+                    type="radio"
+                    name="year"
+                    value="new"
+                    checked={select === "new"}
+                    onChange={event => handleSelectChange(event)}
+                />
+                <Styled.RadioButtonLabel />
+                <div>Более новые</div>
+            </Styled.Item>
+            <Styled.Item>
+                <Styled.RadioButton
+                type="radio"
+                name="year"
+                value="old"
+                checked={select === "old"}
+                onChange={event => handleSelectChange(event)}
+                 />
+                <Styled.RadioButtonLabel />
+                <div>Более старые</div>
+            </Styled.Item>
+            
+        </Styled.Year>
     )
 }
 
@@ -160,31 +178,30 @@ function Filter() {
     };
     
     const genre = useOutsideClickGenre(handleClickOutsideGenre);
-
-    
-
+        
+       
     return(
-        <div className='centerblock__filter filter'>
-            <div className='filter__title'>Искать по:</div>
-            <div className={`filter__button button-author _btn-text ${isFilterOpen ? 'active' : ''} `} ref={ref} onClick={() => { toggleVisibility()}}  aria-hidden="true" role="button" tabIndex={0}>исполнителю</div>
+        <Styled.CenterblockFilter>
+            <Styled.FilterTitle>Искать по:</Styled.FilterTitle>
+            <Styled.FilterButtons isSelected={isFilterOpen} ref={ref} onClick={() => { toggleVisibility()}}  aria-hidden="true" role="button" tabIndex={0}>исполнителю</Styled.FilterButtons>
             {isFilterOpen && (
                     
                     <FilterButtonAuthor />
                     
                 )}
-            <div className={`filter__button button-year _btn-text ${isFilterYearOpen ? 'active' : ''}`} ref={year} onClick={() => {toggleYearFilter()}} aria-hidden="true" role="button" tabIndex={0}>году выпуска</div>
+            <Styled.FilterButtons isSelected={isFilterYearOpen} ref={year} onClick={() => {toggleYearFilter()}} aria-hidden="true" role="button" tabIndex={0}>году выпуска</Styled.FilterButtons>
             {isFilterYearOpen && (
                 <FilterButtonYear />
             )
 
             }
-            <div className={`filter__button button-genre _btn-text ${isFilterGenreOpen ? 'active' : ''}`} ref={genre} onClick={toggleGenreFilter} aria-hidden="true" role="button" tabIndex={0}>жанру</div>
+            <Styled.FilterButtons isSelected={isFilterGenreOpen} ref={genre} onClick={toggleGenreFilter} aria-hidden="true" role="button" tabIndex={0}>жанру</Styled.FilterButtons>
             {isFilterGenreOpen && (
                     
                     <FilterButtonGenre />
                     
                 )}
-        </div>
+        </Styled.CenterblockFilter>
     )
 }
 
@@ -206,16 +223,16 @@ const tracks = [
 
 function ContentPlaylistTitle(){
     return(
-        <div className='content__title playlist-title'>
-            <div className='playlist-title__col col01'>Трек</div>
-            <div className='playlist-title__col col02'>ИСПОЛНИТЕЛЬ</div>
-            <div className='playlist-title__col col03'>АЛЬБОМ</div>
-            <div className='playlist-title__col col04'>
-                <svg className='playlist-title__svg' alt='time'>
+        <Styled.ContentTitle>
+            <Styled.PlaylistTitleCol01>Трек</Styled.PlaylistTitleCol01>
+            <Styled.PlaylistTitleCol02>ИСПОЛНИТЕЛЬ</Styled.PlaylistTitleCol02>
+            <Styled.PlaylistTitleCol03>АЛЬБОМ</Styled.PlaylistTitleCol03>
+            <Styled.PlaylistTitleCol04>
+                <Styled.PlaylistTitleSvg alt='time'>
                     <use xlinkHref='img/icon/sprite.svg#icon-watch' />
-                </svg>
-            </div>
-        </div>
+                </Styled.PlaylistTitleSvg>
+            </Styled.PlaylistTitleCol04>
+        </Styled.ContentTitle>
     )
 }
 /** 
@@ -279,25 +296,25 @@ function TrackTime(props) {
 */
 function SkeletonTrack() {
     return(
-        <div className='playlist__item'> 
-            <div className='playlist__track playlist__track_skeleton track'>
-                <div className='track__title'>
-                    <div className='track__title-image '>
-                        <div className='skeleton_image'></div>
-                    </div>
-                    <div className='track__title-text'>
-                        <div className='skeleton_title'></div>
-                    </div>
-                </div>
-                <div className='track__author'>
-                    <div className='skeleton_author'></div>
-                </div>
-                <div className='track__album'>
-                    <div className='skeleton_album'></div>
-                </div>
+        <Styled.PlaylistItem> 
+            <Styled.PlaylistTrackSkeleton>
+                <Styled.TrackTitle>
+                    <Styled.TrackTitleImage>
+                        <Styled.SkeletonImage></Styled.SkeletonImage>
+                    </Styled.TrackTitleImage>
+                    <Styled.TrackTitleText>
+                        <Styled.SkeletonTitle></Styled.SkeletonTitle>
+                    </Styled.TrackTitleText>
+                </Styled.TrackTitle>
+                <Styled.TrackAuthor>
+                    <Styled.SkeletonAuthor></Styled.SkeletonAuthor>
+                </Styled.TrackAuthor>
+                <Styled.TrackAlbum>
+                    <Styled.SkeletonAlbum></Styled.SkeletonAlbum>
+                </Styled.TrackAlbum>
 
-            </div>
-        </div>    
+            </Styled.PlaylistTrackSkeleton>
+        </Styled.PlaylistItem>    
     )
 }
 
@@ -305,33 +322,33 @@ function SkeletonTrack() {
 
 function PlayListItem({author, album, time, title, subtitle}) {
     return(
-        <div className='playlist__item'> 
-            <div className='playlist__track track'>
-                <div className='track__title'>
-                    <div className='track__title-image'>
-                        <svg className='track__title-svg" alt="music'>
+        <Styled.PlaylistItem> 
+            <Styled.PlaylistTrack>
+                <Styled.TrackTitle>
+                    <Styled.TrackTitleImage>
+                        <Styled.TrackTitleSvg alt='music'>
                             <use xlinkHref='img/icon/sprite.svg#icon-note' />
-                        </svg>
-                    </div>
-                    <div className='track__title-text'>
-                        <a className='track__title-link' href='http://'>{title}<span className='track__title-span'>{subtitle}</span></a>
+                        </Styled.TrackTitleSvg>
+                    </Styled.TrackTitleImage>
+                    <Styled.TrackTitleText>
+                        <Styled.TrackTitleLink href='http://'>{title}<Styled.TrackTitleSpan>{subtitle}</Styled.TrackTitleSpan></Styled.TrackTitleLink>
                        
-                    </div>
-                </div>
-                <div className='track__author'>
-                    <a className='track__author-link' href='http://'>{author}</a>
-                </div>
-                <div className='track__album'>
-                    <a className='track__album-link' href='http://'>{album}</a>
-                </div>
-                <div className='track__time'>
-                    <svg className='track__time-svg' alt='time'>
+                    </Styled.TrackTitleText>
+                </Styled.TrackTitle>
+                <Styled.TrackAuthor>
+                    <Styled.TrackAuthorLink href='http://'>{author}</Styled.TrackAuthorLink>
+                </Styled.TrackAuthor>
+                <Styled.TrackAlbum>
+                    <Styled.TrackAlbumLink href='http://'>{album}</Styled.TrackAlbumLink>
+                </Styled.TrackAlbum>
+                <Styled.TrackTime>
+                    <Styled.TrackTimeSvg alt='time'>
                         <use xlinkHref="img/icon/sprite.svg#icon-like" />
-                    </svg>
-                    <span className='track__time-text'>{time}</span> 
-                </div>
-            </div>
-        </div>
+                    </Styled.TrackTimeSvg>
+                    <Styled.TrackTimeText>{time}</Styled.TrackTimeText> 
+                </Styled.TrackTime>
+            </Styled.PlaylistTrack>
+        </Styled.PlaylistItem>
     )
 
 
@@ -380,7 +397,7 @@ function ContentPlaylistPlaylist() {
  
 
     return(
-        <div className='content__playlist playlist'>
+        <Styled.ContentPlaylist>
              {!skeleton ?
              <Content /> :
              (
@@ -398,7 +415,7 @@ function ContentPlaylistPlaylist() {
              </> 
              )
             } 
-        </div>
+        </Styled.ContentPlaylist>
     )
      
 
@@ -407,10 +424,10 @@ function ContentPlaylistPlaylist() {
 
 function CenterBlockContent(){
     return(
-        <div className='centerblock__content'>
+        <Styled.CenterblockContent>
             <ContentPlaylistTitle />
             <ContentPlaylistPlaylist />
-        </div>
+        </Styled.CenterblockContent>
     )
 }
 
@@ -418,12 +435,12 @@ function CenterBlockContent(){
 
 function MainCenterBlock() {
     return(
-        <div className='main__centerblock centerblock'>
+        <Styled.MainCenterblock>
             <Search />
             <Title />
             <Filter />
             <CenterBlockContent />
-        </div>
+        </Styled.MainCenterblock>
     )
 }
 

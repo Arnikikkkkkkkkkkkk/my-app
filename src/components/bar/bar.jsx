@@ -1,11 +1,11 @@
-import './css/style.css';
 import { useState, useEffect } from 'react';
+import * as Styled from './styles'
 
 
 
 function Progress(){
     return(
-        <div className='bar__player-progress' />
+        <Styled.BarPlayerProgress />
     )
 }
 
@@ -13,63 +13,63 @@ function Progress(){
 
 function ButtonPrevious(){
     return(
-        <div className='player__btn-prev'>
-            <svg className='player__btn-prev-svg' alt='prev'>
+        <Styled.PlayerButtonPrev>
+            <Styled.PlayerButtonPrevSvg alt='prev'>
                 <use xlinkHref='img/icon/sprite.svg#icon-prev' />
-            </svg>
-        </div>
+            </Styled.PlayerButtonPrevSvg>
+        </Styled.PlayerButtonPrev>
     )
 }
 
 function ButtonPlay(){
     return(
-        <div className='player__btn-play _btn'>
-            <svg className='player__btn-play-svg'>
+        <Styled.PlayerButtonPlay>
+            <Styled.PlayerButtonPlaySvg>
                 <use xlinkHref='img/icon/sprite.svg#icon-play' />
-            </svg>
-        </div>
+            </Styled.PlayerButtonPlaySvg>
+        </Styled.PlayerButtonPlay>
     )
 }
 
 function ButtonNext(){
     return(
-        <div className='player__btn-next'>
-            <svg className='player__btn-next-svg' alt='next'>
+        <Styled.PlayerButtonNext>
+            <Styled.PlayerButtonNextSvg alt='next'>
                 <use xlinkHref='img/icon/sprite.svg#icon-next' />
-            </svg>
-        </div>
+            </Styled.PlayerButtonNextSvg>
+        </Styled.PlayerButtonNext>
     )
 }
 
 function ButtonRepeat(){
     return(
-        <div className='player__btn-repeat _btn-icon'>
-            <svg className='player__btn-repeat-svg' alt='repeat'>
+        <Styled.PlayerButtonRepeat>
+            <Styled.PlayerButtonRepeatSvg alt='repeat'>
                 <use xlinkHref='img/icon/sprite.svg#icon-repeat' />
-            </svg>
-        </div>
+            </Styled.PlayerButtonRepeatSvg>
+        </Styled.PlayerButtonRepeat>
     )
 }
 
 function ButtonShuffle(){
     return(
-        <div className='player__btn-shuffle _btn-icon'>
-            <svg className='player__btn-shuffle-svg' alt='shuffle'>
+        <Styled.PlayerButtonShuffle>
+            <Styled.PlayerButtonShuffleSvg alt='shuffle'>
                 <use xlinkHref='img/icon/sprite.svg#icon-shuffle' />
-            </svg>
-        </div>
+            </Styled.PlayerButtonShuffleSvg>
+        </Styled.PlayerButtonShuffle>
     )
 }
 
 function PlayerControls() {
     return(
-        <div className='player__controls'>
+        <Styled.PlayerControls>
             <ButtonPrevious />
             <ButtonPlay />
             <ButtonNext />
             <ButtonRepeat />
             <ButtonShuffle />
-        </div>
+        </Styled.PlayerControls>
     )
 }
 
@@ -77,51 +77,51 @@ function PlayerControls() {
 
 function TrackPlayImage(){
     return(
-        <div className='track-play__image'>
-            <svg className='track-play__svg' alt='music'>
+        <Styled.TrackPlayImage>
+            <Styled.TrackPlaySvg>
                 <use xlinkHref='img/icon/sprite.svg#icon-note' />
-            </svg>
-        </div>
+            </Styled.TrackPlaySvg>
+        </Styled.TrackPlayImage>
     )
 }
 
 function TrackPlayAuthor(props){
     return(
-        <div className='track-play__author'>
-            <a className='track-play__author-link' href={props.link}>{props.text}</a>
-        </div>
+        <Styled.TrackPlayAuthor>
+            <Styled.TrackPlayLinkAuthor href={props.link}>{props.text}</Styled.TrackPlayLinkAuthor>
+        </Styled.TrackPlayAuthor>
     )
 }
 
 function TrackPlayAlbum(props){
     return(
-        <div className='track-play__album'>
-            <a className='track-play__album-link' href={props.link}>{props.text}</a>
-        </div>
+        <Styled.TrackPlayAlbum>
+            <Styled.TrackPlayLinkAlbum href={props.link}>{props.text}</Styled.TrackPlayLinkAlbum>
+        </Styled.TrackPlayAlbum>
     )
 }
 
 function TrackPlaySkeletonImage() {
     return(
-        <div className='track-play__image'>
-            <div className='skeleton__track_image'></div>
-        </div>
+        <Styled.TrackPlayImage>
+            <Styled.SkeletonTrackImage></Styled.SkeletonTrackImage>
+        </Styled.TrackPlayImage>
         )
 }
 
 function TrackPlaySkeletonAuthor() {
     return(
-        <div className='track-play__author'>
-            <div className='skeleton__track_author'></div>
-        </div>
+        <Styled.TrackPlayAuthor>
+           <Styled.SkeletonTrackAlbum></Styled.SkeletonTrackAlbum>
+        </Styled.TrackPlayAuthor>
     )
 }
 
 function TrackPlaySkeletonAlbum(){
     return(
-        <div className='track-play__album'>
-            <div className='skeleton__track_album'></div>
-        </div>
+        <Styled.TrackPlayAlbum>
+            <Styled.SkeletonTrackAlbum></Styled.SkeletonTrackAlbum>
+        </Styled.TrackPlayAlbum>
     )
 }
 
@@ -138,11 +138,11 @@ function TrackPlayContain(){
     }, []);
 
     return(
-        <div className='track-play__contain'>
+        <Styled.TrackPlayContain>
              {!skeleton ?
              (
             <>
-             <TrackPlayImage />
+            <TrackPlayImage />
             <TrackPlayAuthor text='Ты та...'/>
             <TrackPlayAlbum text='Баста'/>
             </>) :
@@ -153,47 +153,46 @@ function TrackPlayContain(){
                 <TrackPlaySkeletonAlbum />
                 </>
             )
-}
-           
-        </div>
+            }          
+        </Styled.TrackPlayContain>
     )
 }
 
 function TrackPlayLike(){
     return(
-        <div className='track-play__like _btn-icon'>
-            <svg className='track-play__like-svg' alt='like'>
+        <Styled.TrackPlayLike>
+            <Styled.TrackPlayLikeSvg alt='like'>
                 <use xlinkHref='img/icon/sprite.svg#icon-like' />
-            </svg>
-        </div>
+            </Styled.TrackPlayLikeSvg>
+        </Styled.TrackPlayLike>
     )
 }
 
 function TrackPlayDislike(){
     return(
-        <div className='track-play__dislike _btn-icon'>
-            <svg className='track-play__dislike-svg' alt='dislike'>
+        <Styled.TrackPlayDislike>
+            <Styled.TrackPlayDislikeSvg alt='dislike'>
                 <use xlinkHref='img/icon/sprite.svg#icon-dislike' />
-            </svg>
-        </div>
+            </Styled.TrackPlayDislikeSvg>
+        </Styled.TrackPlayDislike>
     )
 }
 
 function TrackPlayLikeDislike(){
     return(
-        <div className='track-play__like-dis'>
+        <Styled.TrackPlayLikeDis>
             <TrackPlayLike />
             <TrackPlayDislike />
-        </div>
+        </Styled.TrackPlayLikeDis>
     )
 }
 
 function PlayerTrackPlay(){
     return(
-        <div className='player__track-play track-play'>
+        <Styled.TrackPlay>
             <TrackPlayContain />
             <TrackPlayLikeDislike />
-        </div>
+        </Styled.TrackPlay>
     )
 }
 
@@ -202,10 +201,10 @@ function PlayerTrackPlay(){
 
 function BarPlayer(){
     return(
-        <div className='bar__player player'>
+        <Styled.BarPlayer>
             <PlayerControls />
             <PlayerTrackPlay />
-        </div>
+        </Styled.BarPlayer>
     )
 }
 
@@ -213,30 +212,30 @@ function BarPlayer(){
 
 function VolumeImage() {
     return(
-        <div className='volume__image'>
-            <svg className='volume__svg' alt='volume'>
+        <Styled.VolumeImage>
+            <Styled.VolumeSvg alt='volume'>
                 <use xlinkHref='img/icon/sprite.svg#icon-volume' />
-            </svg>
-        </div>
+            </Styled.VolumeSvg>
+        </Styled.VolumeImage>
     )
 }
 
 function VolumeProgress(){
     return(
-        <div className='volume__progress _btn'>
-            <input className='volume__progress-line _btn' type='range' name='range' />
-        </div>
+        <Styled.VolumeProgress>
+            <Styled.VolumeProgressLine name='range' />
+        </Styled.VolumeProgress>
     )
 }
 
 function BarVolumeBlock() {
     return(
-        <div className='bar__volume-block volume'>
-            <div className='volume__content'>
+        <Styled.BarVolumeBlock>
+            <Styled.VolumeContent>
                 <VolumeImage />
                 <VolumeProgress />
-            </div>
-        </div>
+            </Styled.VolumeContent>
+        </Styled.BarVolumeBlock>
     )
 }
 
@@ -244,28 +243,28 @@ function BarVolumeBlock() {
 
 function BarPlayerBlock(){
     return(
-        <div className='bar__player-block'>
+        <Styled.BarPlayerBlock>
             <BarPlayer />
             <BarVolumeBlock />
-        </div>
+        </Styled.BarPlayerBlock>
     )
 }
 
 function BarContent() {
     return(
-        <div className='bar__content'>
+        <Styled.BarContent>
             <Progress />
             <BarPlayerBlock />
-        </div>
+        </Styled.BarContent>
     )
 }
 
 
 function Bar() {
     return(
-        <div className='bar'>
+        <Styled.Bar>
             <BarContent />
-        </div>
+        </Styled.Bar>
     )
 }
 

@@ -1,45 +1,46 @@
-import './css/style.css';
+
 import { useState, useEffect } from 'react';
+import * as Styled from './styles'
 
  // ------------------------------ SideBar-------------------------- //
 
 function UserName() {
     return(
-        <p className='sidebar__personal-name'>Biba and Boba</p>
+        <Styled.SidebarPersonalName>Biba and Boba</Styled.SidebarPersonalName>
     )
 }
 
 function UserAvatar() {
     return(
-        <div className='sidebar__avatar' />
+        <Styled.SidebarAvatar />
     )
 }
 
 function SidebarPersonal() {
     return(
-        <div className='sidebar__personal'>
+        <Styled.SidebarPersonal>
             <UserName />
             <UserAvatar />
-        </div>
+        </Styled.SidebarPersonal>
     )
 }
 
 function SidebarItem(props) {
 
     return(
-        <div className='sidebar__item'>
-            <a className='sidebar__link' href='http://'>
-                <img className='sidebar__img' src={props.image} alt='day"s playlist' />
-            </a>
-        </div>
+        <Styled.SidebarItem>
+            <Styled.SidebarLink href='http://'>
+                <Styled.SidebarImage src={props.image} alt='day"s playlist' />
+            </Styled.SidebarLink>
+        </Styled.SidebarItem>
     )
 }
 
 function SidebarSkeleton() {
     return(
-        <div className='sidebar__item'>
-            <div className='skeleton_picture'></div>
-        </div>
+        <Styled.SidebarItem>
+            <Styled.SidebarSkeleton></Styled.SidebarSkeleton>
+        </Styled.SidebarItem>
     )
 }
 
@@ -56,7 +57,7 @@ function SidebarList() {
     }, []);
  
     return(
-        <div className='sidebar__item'>
+        <Styled.SidebarList>
             {!skeleton ?
             (<>
                 <SidebarItem image = "playlist01.png" />
@@ -73,24 +74,24 @@ function SidebarList() {
                 
 
             }
-        </div>
+        </Styled.SidebarList>
     )
 }
 
 function SidebarBlock() {
     return(
-        <div className='sidebar__block'>
+        <Styled.SidebarBlock>
             <SidebarList />
-        </div>
+        </Styled.SidebarBlock>
     )
 }
 
 function MainSideBar() {
     return(
-        <div className='main__sidebar sidebar'>
+        <Styled.MainSidebar>
             <SidebarPersonal />
             <SidebarBlock />
-        </div>
+        </Styled.MainSidebar>
     )
 }
 

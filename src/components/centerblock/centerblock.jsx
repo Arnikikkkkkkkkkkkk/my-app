@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import * as Styled from './styles'
 
-function Search() {
+export function Search() {
     return(
         <Styled.CenterblockSearch>
             <Styled.SearchSvg>
@@ -13,7 +13,7 @@ function Search() {
     )
 }
 
-function Title() {
+export function Title() {
     return(
         <Styled.CenterblockTitle>Треки</Styled.CenterblockTitle>
     )
@@ -221,7 +221,7 @@ const tracks = [
 ]
 
 
-function ContentPlaylistTitle(){
+export function ContentPlaylistTitle(){
     return(
         <Styled.ContentTitle>
             <Styled.PlaylistTitleCol01>Трек</Styled.PlaylistTitleCol01>
@@ -294,7 +294,7 @@ function TrackTime(props) {
 } 
    
 */
-function SkeletonTrack() {
+export function SkeletonTrack() {
     return(
         <Styled.PlaylistItem> 
             <Styled.PlaylistTrackSkeleton>
@@ -320,7 +320,7 @@ function SkeletonTrack() {
 
 
 
-function PlayListItem({author, album, time, title, subtitle}) {
+export function PlayListItem({author, album, time, title, subtitle}) {
     return(
         <Styled.PlaylistItem> 
             <Styled.PlaylistTrack>
@@ -369,7 +369,7 @@ function PlayListItem(){
 }
 */
 
-function Content () {
+export function Content () {
     return(
 
             tracks.map(({id, author, album, title, subtitle, time}) => 
@@ -381,7 +381,7 @@ function Content () {
 }
 
 
-function ContentPlaylistPlaylist() {
+export function ContentPlaylistPlaylist() {
 
 
     const [skeleton, setSkeleton] = useState(false);
@@ -422,7 +422,7 @@ function ContentPlaylistPlaylist() {
 }
 
 
-function CenterBlockContent(){
+export function CenterBlockContent(){
     return(
         <Styled.CenterblockContent>
             <ContentPlaylistTitle />

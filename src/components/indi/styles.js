@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from "styled-components";
 
 export const A = styled.a`
 font-style: normal;
@@ -33,6 +33,7 @@ padding: 20px 40px 20px 111px;
 export const CenterblockContent = styled.div`
 display: flex;
 flex-direction: column;
+width: 1107px;
 `;
 
 export const CenterblockSearch = styled.div`
@@ -138,13 +139,7 @@ margin-bottom: 24px;
 export const ContentPlaylist = styled.div`
 display: flex;
 flex-direction: column;
-height: 550px;
-overflow: auto;
-
-::-webkit-scrollbar { width: 0; }
 `;
-
-
 
 export const PlaylistTitleCol = styled.div`
 font-style: normal;
@@ -457,6 +452,14 @@ export const RadioButton = styled.input`
       margin: 3px;
     }
   }
+`;
+
+export const PlaylistContainer = styled.div `
+max-width: 1920px;
+height: 100vh;
+margin: 0 auto;
+position: relative;
+background-color: #181818;
 `;
 
 

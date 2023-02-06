@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from 'react';
-import * as Styled from './styles'
+import * as Styled from './styles';
+
 
  // ------------------------------ SideBar-------------------------- //
 
 function UserName() {
     return(
-        <Styled.SidebarPersonalName>Biba and Boba</Styled.SidebarPersonalName>
+        <Styled.SidebarPersonalName>Sergey.Ivanov</Styled.SidebarPersonalName>
     )
 }
 
@@ -29,7 +30,7 @@ function SidebarItem(props) {
 
     return(
         <Styled.SidebarItem>
-            <Styled.SidebarLink href='http://'>
+            <Styled.SidebarLink href={props.href}>
                 <Styled.SidebarImage src={props.image} alt='day"s playlist' />
             </Styled.SidebarLink>
         </Styled.SidebarItem>
@@ -53,16 +54,16 @@ function SidebarList() {
 
             setSkeleton(false);
 
-        }, 5000);
+        }, 1000);
     }, []);
  
     return(
         <Styled.SidebarList>
             {!skeleton ?
             (<>
-                <SidebarItem image = "playlist01.png" />
-                <SidebarItem image = "playlist02.png" />
-                <SidebarItem image = "playlist03.png" />
+                <SidebarItem image = "playlist01.png" href="/indi" />
+                <SidebarItem image = "playlist02.png" href="/indi/" />
+                <SidebarItem image = "playlist03.png" href="./components/pages/indi" />
             </>)
                 
                 :
@@ -75,6 +76,7 @@ function SidebarList() {
 
             }
         </Styled.SidebarList>
+
     )
 }
 

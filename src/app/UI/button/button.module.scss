@@ -1,0 +1,23 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+
+.button {
+  @include text($stratos-regular, $font-weight-regular, $font-size-button, $white, $line-height-form-button);
+
+  border: none;
+  border-radius: 6px;
+  padding: 12px 46px;
+  width: 100%;
+  max-width: 278px;
+  text-align: center;
+  background: $blue-gem;
+  transition: background 0.2s linear;
+
+  &:hover {
+    background: $pigment-indigo;
+  }
+
+  &:active {
+    background: $valhalla;
+  }
+}

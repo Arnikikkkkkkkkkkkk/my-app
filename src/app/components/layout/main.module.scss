@@ -1,0 +1,27 @@
+@import "/src/style/abstracts/variables";
+
+.main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__nav {
+    padding: 20px 0 20px 36px;
+    width: 100%;
+    max-width: 244px;
+    background: $god-gray;
+  }
+
+  &__sidebar {
+    padding: 20px 90px 20px 78px;
+    width: 100%;
+    max-width: 418px;
+  }
+}
+
+.center {
+  flex-grow: 3;
+  padding: 20px 40px 20px 111px;
+  width: auto;
+}

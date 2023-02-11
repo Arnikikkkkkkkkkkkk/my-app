@@ -1,0 +1,40 @@
+@import "/src/style/abstracts/variables";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.image {
+  margin-right: 17px;
+  width: 13px;
+  height: 20px;
+}
+
+.icon {
+  display: inline-block;
+  width: 13px;
+  height: 18px;
+  fill: transparent;
+
+  & mask {
+    fill: $white;
+  }
+
+  & path:nth-child(2) {
+    fill: $white;
+  }
+
+  & path:nth-child(3) {
+    stroke: $white;
+  }
+}
+
+.progress {
+  width: 109px;
+}
+
+.progress_line {
+  width: 109px;
+}

@@ -1,0 +1,23 @@
+@import "/src/style/abstracts/variables";
+
+.next_icon {
+  width: 15px;
+  height: 14px;
+  fill: inherit;
+  cursor: pointer;
+
+  & path {
+    stroke: $alto-white;
+    transition: stroke 0.1s linear, fill 0.1s linear;
+  }
+
+  &:hover path {
+    fill: $silver-chalice;
+    stroke: $silver-chalice;
+  }
+
+  &:active path {
+    fill: $white;
+    stroke: $white;
+  }
+}

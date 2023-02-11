@@ -1,0 +1,14 @@
+@import "/src/style/abstracts/variables";
+
+.progress {
+  width: 100%;
+  height: 5px;
+  background: $mine-shaft-white;
+  cursor: pointer;
+}
+
+.band {
+  width: 0;
+  height: 100%;
+  background: $heliotrope;
+}

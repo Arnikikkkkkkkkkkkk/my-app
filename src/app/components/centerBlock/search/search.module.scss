@@ -1,0 +1,37 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+
+.search {
+  gap: 5px;
+}
+
+.input {
+  @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-input);
+
+  flex-grow: 100;
+  border: none;
+  padding: 13px 10px 14px;
+  background-color: transparent;
+
+  &::placeholder {
+    @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-input);
+
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  fill: transparent;
+  stroke: $white;
+
+  & path,
+  & circle {
+    stroke: $white;
+  }
+}

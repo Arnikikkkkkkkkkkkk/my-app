@@ -1,0 +1,54 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.col {
+  @include text($stratos, $font-weight-standard, $font-size-playlist-title, $dove-gray, $line-height-playlist-title);
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.icon {
+  width: 12px;
+  height: 12px;
+  fill: transparent;
+
+  & circle,
+  & path {
+    stroke: $dove-gray;
+  }
+}
+
+.col01 {
+  width: 447px;
+}
+
+.col02 {
+  width: 321px;
+}
+
+.col03 {
+  width: 245px;
+}
+
+.col04 {
+  width: 60px;
+  text-align: end;
+}

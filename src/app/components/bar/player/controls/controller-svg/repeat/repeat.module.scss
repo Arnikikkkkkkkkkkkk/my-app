@@ -1,0 +1,24 @@
+@import "/src/style/abstracts/variables";
+
+.repeat {
+  width: 18px;
+  height: 12px;
+  fill: transparent;
+  stroke: $dove-gray;
+  cursor: pointer;
+
+  & path {
+    stroke: $dove-gray;
+    transition: stroke 0.1s linear, fill 0.1s linear;
+  }
+
+  &:hover path {
+    fill: $silver-chalice;
+    stroke: $silver-chalice;
+  }
+
+  &.active path {
+    fill: $white;
+    stroke: $white;
+  }
+}

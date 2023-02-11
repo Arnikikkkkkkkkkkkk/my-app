@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains all @mixin for the project
+// -----------------------------------------------------------------------------
+
+/// TEXT
+@mixin text($font-family, $wight, $size, $color, $height) {
+  font-family: $font-family;
+  font-weight: $wight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}

@@ -1,0 +1,64 @@
+@import "/src/style/abstracts/variables";
+@import-normalize;
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $stratos;
+  font-weight: $font-weight-standard;
+  font-style: normal;
+  font-size: $font-size-standard;
+  line-height: $line-height-standard;
+  color: $white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  display: block;
+  max-width: max-content;
+  font-family: $stratos;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  background: $mine-shaft-black;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  height: 100vh;
+  background: $god-gray;
+}
+
+.footer {
+  height: 78px;
+}

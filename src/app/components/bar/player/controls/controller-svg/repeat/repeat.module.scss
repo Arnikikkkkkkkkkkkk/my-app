@@ -4,11 +4,11 @@
   width: 18px;
   height: 12px;
   fill: transparent;
-  stroke: $dove-gray;
+  stroke: var(--icon-controls) y;
   cursor: pointer;
 
   & path {
-    stroke: $dove-gray;
+    stroke: var(--icon-controls);
     transition: stroke 0.1s linear, fill 0.1s linear;
   }
 

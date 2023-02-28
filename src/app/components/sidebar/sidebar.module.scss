@@ -17,14 +17,14 @@
 }
 
 .personal_name {
-  @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-link);
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-link);
 }
 
 .avatar {
   border-radius: 50%;
   width: 43px;
   height: 43px;
-  background-color: $mine-shaft-black;
+  background-color: var(--image-track-background);
 }
 
 .block {
@@ -47,7 +47,7 @@
   height: 150px;
 
   &.skeleton {
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }

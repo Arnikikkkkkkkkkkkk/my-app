@@ -14,7 +14,15 @@ const Player = (
     refAudio,
     currentTrack,
     setTrack,
-    trackData
+    trackData,
+    isRandom,
+    setIsRandom,
+    listRandomTrack,
+    setListRandomTrack,
+    volume,
+    setVolume,
+    muted,
+    setMuted
   }) => (
     <div className={className.player_block}>
       <div className={`${className.player}`}>
@@ -24,13 +32,23 @@ const Player = (
           isPlay={isPlay}
           setTrack={setTrack}
           trackData={trackData}
-          currentTrack={currentTrack}/>
+          currentTrack={currentTrack}
+          isRandom={isRandom}
+          setIsRandom={setIsRandom}
+          listRandomTrack={listRandomTrack}
+          setListRandomTrack={setListRandomTrack}/>
         <PlayerTrack 
           className={styles.play}
           currentTrack={currentTrack}
             />
       </div>
-      <Volume className={className.volume_block}/>
+      <Volume 
+        className={className.volume_block}
+        refAudio={refAudio}
+        volume={volume}
+        setVolume={setVolume}
+        muted={muted}
+        setMuted={setMuted}/>
     </div>
 )
 

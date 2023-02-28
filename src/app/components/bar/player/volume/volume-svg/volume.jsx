@@ -1,7 +1,7 @@
 import React from 'react';
 
-const VolumeSvg = ({className}) => (
-  <svg className={className} viewBox="0 0 14 18">
+const VolumeSvg = ({styles, isActiveMuted, muted}) => (
+  <svg role='button' onClick={isActiveMuted} className={muted ? `${styles.icon} ${styles.active}` : `${styles.icon}`} viewBox="0 0 14 18">
     <mask>
       <path fillRule="evenodd" clipRule="evenodd" d="M8 0L3 5H0V13H3L8 18V0Z"/>
     </mask>

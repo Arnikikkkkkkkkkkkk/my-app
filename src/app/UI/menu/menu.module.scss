@@ -20,7 +20,7 @@
   font-weight: $font-weight-standard;
   font-size: 16px;
   line-height: $line-height-link;
-  color: $white;
+  color: var(--text);
   background: none;
   transition: color 0.2s linear;
 
@@ -51,4 +51,32 @@
   overflow: hidden;
   padding: 18px 0 10px;
   gap: 16px;
+}
+
+.theme {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  fill: none;
+  cursor: pointer;
+
+  & path {
+    stroke: $white;
+  }
+
+  & circle {
+    stroke: $white;
+  }
+
+  &.light {
+    stroke: $black;
+
+    & path {
+      fill: $black;
+    }
+
+    & circle {
+      stroke: $black;
+    }
+  }
 }

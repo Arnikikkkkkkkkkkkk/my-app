@@ -17,7 +17,6 @@ const Playlist = () => {
     activeModal, 
     refButton,
     setTrackData,
-    setTrack,
   ] = useOutletContext();
 
   useEffect(() => {
@@ -31,12 +30,11 @@ const Playlist = () => {
           setLoading(false)
           setTracksList(items)
           setTrackData(items);
-          setTrack(items[0]);
         });
     };
   
     fetchDate();
-  }, [handlerClickWindow, setLoading, setTrack, setTrackData]);
+  }, [handlerClickWindow, setLoading, setTrackData]);
 
 
   return (

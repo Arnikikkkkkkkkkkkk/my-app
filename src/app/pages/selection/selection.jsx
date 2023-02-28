@@ -17,7 +17,6 @@ const Selection = () => {
     activeModal, 
     refButton,
     setTrackData,
-    setTrack,
   ] = useOutletContext();
   const params = useParams();
 
@@ -35,12 +34,11 @@ const Selection = () => {
           setLoading(false)
           setTracksList(items)
           setTrackData(items.items);
-          setTrack(items.items[0]);
         });
     };
   
     fetchDate();
-  }, [handlerClickWindow, setLoading, params, setTrackData, setTrack]);
+  }, [handlerClickWindow, setLoading, params, setTrackData]);
 
 
   return(

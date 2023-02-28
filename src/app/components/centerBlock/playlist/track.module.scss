@@ -17,10 +17,10 @@
   padding: 16px;
   width: 51px;
   height: 51px;
-  background: $mine-shaft-black;
+  background: var(--image-track-background);
 
   &.skeleton {
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
@@ -41,14 +41,14 @@
   &.skeleton {
     width: 84%;
     height: 19px;
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
 }
 
 .title_link {
-  @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-link);
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-link);
 }
 
 .title_span {
@@ -63,14 +63,14 @@
   &.skeleton {
     width: 30%;
     height: 19px;
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
 }
 
 .author_link {
-  @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-link);
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-link);
 
   text-align: left;
 }
@@ -81,7 +81,7 @@
   &.skeleton {
     width: 28%;
     height: 19px;
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
@@ -96,6 +96,7 @@
   width: 14px;
   height: 12px;
   fill: transparent;
+  cursor: pointer;
 
   & path {
     stroke: $dove-gray;

@@ -32,7 +32,6 @@ const Main = () => {
           setLoading(false)
           setTracksList(items)
           setTrackData(items);
-          setTrack(items[0]);
         });
     };
   

@@ -9,7 +9,7 @@ body {
   font-style: normal;
   font-size: $font-size-standard;
   line-height: $line-height-standard;
-  color: $white;
+  color: var(--text);
 }
 
 * {
@@ -56,7 +56,8 @@ button {
   position: relative;
   margin: 0 auto;
   height: 100vh;
-  background: $god-gray;
+  max-width: 1920px;
+  background: var(--background-color);
 }
 
 .footer {

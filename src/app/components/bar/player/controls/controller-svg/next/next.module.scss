@@ -7,7 +7,7 @@
   cursor: pointer;
 
   & path {
-    stroke: $alto-white;
+    stroke: var(--icon-controls);
     transition: stroke 0.1s linear, fill 0.1s linear;
   }
 

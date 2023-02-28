@@ -12,7 +12,6 @@ const Progress = ({progressTime, refAudio}) => {
     const progress = (offSetX / widthProgress) * 100;
 
     refAudio.current.currentTime = progress / 100 * progressTime.duration;
-    refAudio.current.play();
   };
 
   return(

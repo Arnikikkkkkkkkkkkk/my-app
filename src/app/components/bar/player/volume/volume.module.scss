@@ -17,17 +17,35 @@
   width: 13px;
   height: 18px;
   fill: transparent;
+  cursor: pointer;
 
   & mask {
-    fill: $white;
+    fill: var(--icon-controls);
   }
 
   & path:nth-child(2) {
-    fill: $white;
+    fill: var(--icon-controls);
+    transition: fill 0.2s linear;
   }
 
   & path:nth-child(3) {
-    stroke: $white;
+    stroke: var(--icon-controls);
+  }
+
+  &:hover {
+    & path:nth-child(2) {
+      fill: var(--icon-controls);
+    }
+
+    & path:nth-child(3) {
+      stroke: var(--icon-controls);
+    }
+  }
+
+  &.active {
+    & path:nth-child(3) {
+      stroke: none;
+    }
   }
 }
 
@@ -37,4 +55,22 @@
 
 .progress_line {
   width: 109px;
+}
+
+.range {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  height: 3px;
+  background: linear-gradient(90deg, var(--volume) 30%, var(--volume-track) 30%);
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    border: 2px solid var(--border-volume);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background: var(--background-volume);
+    cursor: pointer;
+  }
 }

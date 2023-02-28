@@ -16,10 +16,11 @@ const PlayerController = (
     setTrack, 
     trackData, 
     currentTrack, 
-    refAudio
+    refAudio,
+    isRandom,
+    setIsRandom
   }) => {
   const [loopActive, setLoopActive] = useState(false);
-  const [shuffleActive, setShuffleActive] = useState(false);
 
   const handlerPlayAudio = () => {
     setIsPlay(!isPlay);
@@ -27,6 +28,7 @@ const PlayerController = (
 
   const handlerBackAudio = () => {
     const index = trackData.findIndex(track => track.name === currentTrack.name)
+    
 
     if(index === 0) {
       setTrack(trackData[trackData.length - 1])
@@ -40,19 +42,21 @@ const PlayerController = (
       setTimeout(() => {
         setIsPlay(true)
         refAudio.current.play();
-      }, 500);
+      }, 0);
     }
   }
 
   const handlerNextAudio = () => {
     const index = trackData.findIndex(track => track.name === currentTrack.name)
+    const rand = 0 + Math.random() * (trackData.length + 1)
+    const randomIndex = Math.floor(rand);
     const lastIndexTrack = trackData.length - 1;
 
-    if(index === lastIndexTrack) {
+    if (isRandom) {
+      setTrack(trackData[randomIndex])
+    } else if (index === lastIndexTrack && !isRandom) {
       setTrack(trackData[0])
-    }
-
-    if(index !== lastIndexTrack) {
+    } else if (index !== lastIndexTrack && !isRandom) {
       setTrack(trackData[index + 1])
     }
 
@@ -60,7 +64,7 @@ const PlayerController = (
       setTimeout(() => {
         setIsPlay(true)
         refAudio.current.play();
-      }, 500);
+      }, 0);
     }
   }
 
@@ -76,7 +80,7 @@ const PlayerController = (
   }
 
   const handlerShuffleAudio = () => {
-    setShuffleActive(!shuffleActive)
+    setIsRandom(!isRandom)
   }
 
 
@@ -115,7 +119,7 @@ const PlayerController = (
         role="button"
         tabIndex={0}
         onClick={handlerShuffleAudio}>
-        <Shuffle shuffleActive={shuffleActive}/>
+        <Shuffle shuffleActive={isRandom}/>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-/// REGULAR FONT-FAMILY
+
 $stratos: "Stratos", sans-serif;
 $stratos-regular: "Stratos-Regular", sans-serif;
 $stratos-semi-light: "Stratos-SemiLight", sans-serif;
@@ -64,6 +64,73 @@ $valhalla: rgb(39 26 88);
 $porcelain: rgb(244 245 246);
 $red: rgb(255 10 10);
 $silver-chalice: rgb(172 172 172);
+$boulder: rgb(121 121 121);
+$cod-gray: rgb(26 26 26);
+$pampas: rgb(246 245 243);
+$wild-sand: rgb(246 244 244);
+
+/// VAR FOR THEME
+:root[data-theme="light"] {
+  --background-color: rgb(255 255 255);
+  --background-nav: rgb(246 245 243);
+  --text: rgb(0 0 0);
+  --burger-line: rgb(0 0 0);
+  --border-bottom-input: rgb(0 0 0);
+  --box-shadow-from: 0 0 2px rgb(0 0 0);
+  --border-button: rgb(0 0 0);
+  --border-button-modal: rgb(0 0 0);
+  --search: rgb(211 211 211);
+  --icon: rgb(0 0 0);
+  --modal-background: rgb(211 211 211);
+  --scroll-track: rgb(255 255 255);
+  --scroll-box-shadow: 0 0 2px rgb(0 0 0);
+  --scroll-thumb: rgb(79 79 79);
+  --scroll-thumb-hover: rgb(165 165 165);
+  --scroll-thumb-active: rgb(210 210 210);
+  --checkbox-border: rgb(0 0 0);
+  --checkbox-background: rgb(0 0 0);
+  --image-track-background: rgb(246 244 244);
+  --bar-background: rgb(255 255 255 / 80%);
+  --progress: rgb(217 217 217);
+  --icon-controls: rgb(177 177 177);
+  --volume-track: rgb(196 196 196);
+  --volume: rgb(173 97 255);
+  --border-volume: rgb(0 0 0);
+  --background-volume: rgb(255 255 255);
+  --skeleton-background-start: rgb(191 191 191);
+  --skeleton-background-end: rgb(236 236 236);
+}
+
+:root[data-theme="dark"] {
+  --background-color: rgb(24 24 24);
+  --background-nav: rgb(26 26 26);
+  --text: rgb(255 255 255);
+  --burger-line: rgb(211 211 211);
+  --border-bottom-input: rgb(211 211 211);
+  --box-shadow-from: none;
+  --border-button: rgb(211 211 211);
+  --border-button-modal: rgb(255 255 255);
+  --search: rgb(78 78 78);
+  --icon: rgb(255 255 255);
+  --modal-background: rgb(49 49 49);
+  --scroll-track: rgb(78 78 78);
+  --scroll-box-shadow: none;
+  --scroll-thumb: rgb(255 255 255);
+  --scroll-thumb-hover: rgb(211 211 211);
+  --scroll-thumb-active: rgb(156 156 156);
+  --checkbox-border: rgb(255 255 255);
+  --checkbox-background: rgb(255 255 255);
+  --image-track-background: rgb(56 56 56);
+  --bar-background: rgb(28 28 28 / 80%);
+  --progress: rgb(46 46 46);
+  --icon-controls: rgb(217 217 217);
+  --volume-track: rgb(121 121 121);
+  --volume: rgb(255 255 255);
+  --border-volume: rgb(255 255 255);
+  --background-volume: rgb(26 26 26);
+  --skeleton-background-start: rgb(49 49 49);
+  --skeleton-background-end: rgb(105 105 105);
+}
 
 /// FONT-FAMILY
 
@@ -100,4 +167,4 @@ $silver-chalice: rgb(172 172 172);
   font-family: "Stratos-Thin";
   font-weight: 100;
   font-style: normal;
-}
+}/// REGULAR FONT-FAMILY

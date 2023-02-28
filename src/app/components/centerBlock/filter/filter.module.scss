@@ -2,5 +2,5 @@
 @import "/src/style/abstracts/mixins";
 
 .title {
-  @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-filter-title);
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-filter-title);
 }

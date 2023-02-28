@@ -17,14 +17,14 @@
   margin-right: 12px;
   width: 51px;
   height: 51px;
-  background-color: $mine-shaft-black;
+  background-color: var(--image-track-background);
 
   &.img {
     display: block;
   }
 
   &.skeleton {
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
@@ -34,7 +34,7 @@
   width: 18px;
   height: 17px;
   fill: transparent;
-  stroke: $tundora;
+  stroke: var(--icon);
 }
 
 .author {
@@ -43,7 +43,7 @@
 
   &.skeleton {
     height: 20px;
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
@@ -55,7 +55,7 @@
   font-size: 16px;
   line-height: 24px;
   white-space: nowrap;
-  color: $white;
+  color: var(--text);
 }
 
 .album {
@@ -64,7 +64,7 @@
 
   &.skeleton {
     height: 20px;
-    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
     background-size: 200% 200%;
     animation: gradient 2s linear infinite;
   }
@@ -75,7 +75,7 @@
   font-style: normal;
   font-size: 13px;
   line-height: 24px;
-  color: $white;
+  color: var(--text);
 }
 
 .like_dis {
@@ -89,9 +89,10 @@
   width: 16px;
   height: 14px;
   fill: transparent;
+  cursor: pointer;
 
   & path {
-    stroke: $dove-gray;
+    stroke: var(--icon);
   }
 }
 
@@ -103,10 +104,11 @@
   width: 16px;
   height: 15px;
   fill: transparent;
-  stroke: $dove-gray;
+  stroke: var(--icon);
+  cursor: pointer;
 
   & path {
-    stroke: $dove-gray;
+    stroke: var(--icon);
   }
 }
 

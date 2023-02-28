@@ -6,7 +6,7 @@
 }
 
 .input {
-  @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-input);
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-input);
 
   flex-grow: 100;
   border: none;
@@ -14,7 +14,7 @@
   background-color: transparent;
 
   &::placeholder {
-    @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-input);
+    @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-input);
 
     background-color: transparent;
   }
@@ -28,10 +28,10 @@
   width: 17px;
   height: 17px;
   fill: transparent;
-  stroke: $white;
+  stroke: var(--icon);
 
   & path,
   & circle {
-    stroke: $white;
+    stroke: var(--icon);
   }
 }

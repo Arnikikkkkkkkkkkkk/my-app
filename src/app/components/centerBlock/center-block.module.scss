@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 51px;
-  border-bottom: 1px solid $tundora;
+  border-bottom: 1px solid var(--search);
   width: 100%;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .title {
-  @include text($stratos, $font-weight-standard, $font-size-title, $white, $line-height-standard);
+  @include text($stratos, $font-weight-standard, $font-size-title, var(--text), $line-height-standard);
 
   margin-bottom: 45px;
   letter-spacing: -0.8px;

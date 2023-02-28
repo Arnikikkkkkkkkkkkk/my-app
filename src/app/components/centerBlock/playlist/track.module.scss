@@ -1,0 +1,110 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+@import "/src/style/abstracts/animation";
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 447px;
+  gap: 17px;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  width: 51px;
+  height: 51px;
+  background: var(--image-track-background);
+
+  &.skeleton {
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 17px;
+  fill: transparent;
+
+  & path,
+  & ellipse {
+    stroke: $tundora;
+  }
+}
+
+.title_text {
+  &.skeleton {
+    width: 84%;
+    height: 19px;
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.title_link {
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-link);
+}
+
+.title_span {
+  @include text($stratos, $font-weight-standard, $font-size-standard, $tundora, $line-height-link);
+}
+
+.author {
+  display: flex;
+  justify-content: flex-start;
+  width: 321px;
+
+  &.skeleton {
+    width: 30%;
+    height: 19px;
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.author_link {
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-link);
+
+  text-align: left;
+}
+
+.album {
+  width: 245px;
+
+  &.skeleton {
+    width: 28%;
+    height: 19px;
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.album_link {
+  @include text($stratos, $font-weight-standard, $font-size-standard, $dove-gray, $line-height-link);
+}
+
+.time_icon {
+  margin-right: 17px;
+  width: 14px;
+  height: 12px;
+  fill: transparent;
+  cursor: pointer;
+
+  & path {
+    stroke: $dove-gray;
+  }
+}
+
+.time_text {
+  @include text($stratos, $font-weight-standard, $font-size-standard, $dove-gray, $line-height-link);
+
+  text-align: right;
+}

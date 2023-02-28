@@ -1,25 +1,186 @@
 {
     "env": {
-      "browser": true,
-      "es2021": true
+        "browser": true,
+        "node": true,
+        "es2021": true
     },
     "extends": [
-      "plugin:react/recommended",
-      "airbnb",
-      "prettier",
-      "plugin:react/jsx-runtime"
+        "airbnb",
+        "airbnb/hooks",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/recommended",
+        "prettier"
     ],
+    "overrides": [],
     "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": "latest",
-      "sourceType": "module"
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
-    "plugins": ["react"],
+    "plugins": [
+        "react",
+        "jsx-a11y"
+    ],
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/extensions.md
+    "settings": {
+        "import/extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+        ],
+        // setting version react
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "react/prop-types": 0,
-      "react/destructuring-assignment": [0]
+        /// REACT
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    "jsx"
+                ]
+            }
+        ],
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
+        "react/no-unknown-property": [
+            "warn"
+        ],
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
+        "react/jsx-indent-props": [
+            2,
+            2
+        ],
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+        "react/jsx-indent": [
+            2,
+            2,
+            {
+                "checkAttributes": true,
+                "indentLogicalExpressions": true
+            }
+        ],
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+        "react/prop-types": "off",
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+        "react/require-default-props": [
+            "warn",
+            {
+                "forbidDefaultForRequired": true,
+                "functions": "ignore"
+            }
+        ],
+        //https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
+            }
+        ],
+        /// REACT HOOKS
+        // https://reactjs.org/docs/hooks-rules.html
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+        /// STANDARD
+        //https://eslint.org/docs/latest/rules/no-unused-vars
+        "no-unused-vars": "warn",
+        // https://eslint.org/docs/latest/rules/prefer-const.htm
+        "prefer-const": [
+            "warn",
+            {
+                "destructuring": "any"
+            }
+        ],
+        //https://eslint.org/docs/latest/rules/array-callback-return
+        "array-callback-return": [
+            "error",
+            {
+                "checkForEach": true
+            }
+        ],
+        //https://eslint.org/docs/latest/rules/eol-last
+        "eol-last": "error",
+        // https://eslint.org/docs/latest/rules/max-len
+        "max-len": [
+            "warn",
+            {
+                "code": 200,
+                "ignoreUrls": true,
+                "ignoreComments": true,
+                "ignoreTrailingComments": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true
+            }
+        ],
+        //https://eslint.org/docs/latest/rules/no-tabs
+        "no-tabs": "off",
+        "indent": [
+            1
+        ],
+        //https://eslint.org/docs/latest/rules/no-param-reassign
+        "no-param-reassign": "off",
+        //https://eslint.org/docs/latest/rules/prefer-destructuring
+        "prefer-destructuring": "error",
+        //https://eslint.org/docs/latest/rules/quotes.html
+        "quotes": [
+            "error",
+            "single"
+        ],
+        //https://eslint.org/docs/latest/rules/consistent-return
+        "consistent-return": [
+            1,
+            {
+                "treatUndefinedAsUnspecified": true
+            }
+        ],
+        //https://eslint.org/docs/latest/rules/no-multiple-empty-lines
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxEOF": 1
+            }
+        ],
+        //https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/extensions.md
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        //https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
+        "import/prefer-default-export": "error",
+        //https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/newline-after-import.md
+        "import/newline-after-import": [
+            "error",
+            {
+                "count": 1
+            }
+        ],
+        // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md#groups-array
+        "import/order": [
+            "warn",
+            {
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                },
+                "newlines-between": "always",
+                "warnOnUnassignedImports": true
+            }
+        ]
     }
-  }
+}

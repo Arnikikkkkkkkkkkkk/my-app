@@ -1,0 +1,30 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 51px;
+  border-bottom: 1px solid var(--search);
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 51px;
+  gap: 15px;
+}
+
+.title {
+  @include text($stratos, $font-weight-standard, $font-size-title, var(--text), $line-height-standard);
+
+  margin-bottom: 45px;
+  letter-spacing: -0.8px;
+}

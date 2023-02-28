@@ -1,0 +1,20 @@
+.menu {
+  display: block;
+  visibility: visible;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 13px 0;
+  width: 20px;
+  height: 36px;
+}
+
+.logo {
+  margin-bottom: 20px;
+  padding: 13px 0;
+  width: max-content;
+  height: max-content;
+}

@@ -1,0 +1,82 @@
+@import "/src/style/abstracts/variables";
+
+.menu {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.25s linear;
+
+  &.active {
+    overflow: visible;
+    height: 100%;
+  }
+
+  &.active .item {
+    margin-bottom: 0;
+  }
+}
+
+.link {
+  border: none;
+  font-weight: $font-weight-standard;
+  font-size: 16px;
+  line-height: $line-height-link;
+  color: var(--text);
+  background: none;
+  transition: color 0.2s linear;
+
+  &:hover {
+    color: $alto;
+  }
+
+  &.active {
+    text-decoration: underline solid $heliotrope-black;
+    color: $heliotrope-black;
+  }
+}
+
+.button {
+  border: none;
+}
+
+.item {
+  margin-bottom: -45px;
+  padding: 5px 0;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 18px 0 10px;
+  gap: 16px;
+}
+
+.theme {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  fill: none;
+  cursor: pointer;
+
+  & path {
+    stroke: $white;
+  }
+
+  & circle {
+    stroke: $white;
+  }
+
+  &.light {
+    stroke: $black;
+
+    & path {
+      fill: $black;
+    }
+
+    & circle {
+      stroke: $black;
+    }
+  }
+}

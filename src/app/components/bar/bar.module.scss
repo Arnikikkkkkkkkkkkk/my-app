@@ -1,0 +1,35 @@
+@import "/src/style/abstracts/variables";
+
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--bar-background);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.player_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 73px;
+}
+
+.player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.volume_block {
+  display: flex;
+  align-items: center;
+  padding: 0 92px 0 0;
+  width: auto;
+}

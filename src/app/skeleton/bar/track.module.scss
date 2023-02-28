@@ -1,0 +1,112 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/animation";
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-areas: "image author" "image album";
+  grid-template-columns: auto 1fr;
+  width: auto;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: image;
+  margin-right: 12px;
+  width: 51px;
+  height: 51px;
+  background-color: $mine-shaft-black;
+
+  &.skeleton {
+    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 17px;
+  fill: transparent;
+  stroke: $tundora;
+}
+
+.author {
+  grid-area: author;
+  min-width: 49px;
+
+  &.skeleton {
+    height: 20px;
+    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.author_link {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  color: $white;
+}
+
+.album {
+  grid-area: album;
+  min-width: 49px;
+
+  &.skeleton {
+    height: 20px;
+    background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.album_link {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 24px;
+  color: $white;
+}
+
+.like_dis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 26%;
+}
+
+.like_icon {
+  width: 16px;
+  height: 14px;
+  fill: transparent;
+
+  & path {
+    stroke: $dove-gray;
+  }
+}
+
+.dislike {
+  margin-left: 28.5px;
+}
+
+.dislike_icon {
+  width: 16px;
+  height: 15px;
+  fill: transparent;
+  stroke: $dove-gray;
+
+  & path {
+    stroke: $dove-gray;
+  }
+}
+
+.like,
+.dislike {
+  padding: 5px;
+}

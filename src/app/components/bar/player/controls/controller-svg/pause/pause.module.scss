@@ -1,0 +1,23 @@
+@import "/src/style/abstracts/variables";
+
+.pause {
+  width: 22px;
+  height: 20px;
+  fill: var(--icon-controls);
+  cursor: pointer;
+
+  & g path {
+    stroke: var(--icon-controls);
+    transition: stroke 0.1s linear, fill 0.1s linear;
+  }
+
+  &:hover g path {
+    fill: $silver-chalice;
+    stroke: $silver-chalice;
+  }
+
+  &:active g path {
+    fill: $white;
+    stroke: $white;
+  }
+}

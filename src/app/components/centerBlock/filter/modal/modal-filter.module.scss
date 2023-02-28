@@ -1,0 +1,158 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+
+.modal {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  display: none;
+  border-radius: 12px;
+  padding: 36px 34px;
+  width: 248px;
+  height: 305px;
+  background: var(--modal-background);
+
+  .checkbox:checked + .label::after {
+    opacity: 1;
+  }
+
+  &.checkbox {
+    width: 450px;
+    height: 100px;
+
+    & > .inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden;
+      gap: 28px;
+    }
+  }
+}
+
+.checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  gap: 28px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: var(--scroll-box-shadow);
+    background: var(--scroll-track);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--scroll-thumb);
+
+    &:hover {
+      background: var(--scroll-thumb-hover);
+    }
+
+    &:active {
+      box-shadow: var(--scroll-box-shadow);
+      background: var(--scroll-thumb-active);
+    }
+  }
+}
+
+.label {
+  padding-left: 25px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: 1;
+    display: block;
+    border: 1px solid var(--checkbox-border);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 3%;
+    top: 20%;
+    z-index: 2;
+    display: block;
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+    background: var(--checkbox-background);
+    opacity: 0;
+  }
+}
+
+.item {
+  @include text($stratos, $font-weight-standard, $font-size-modal-item, var(--text), $line-height-modal-item);
+
+  position: relative;
+  display: flex;
+  gap: 14px;
+}
+
+.modal_button {
+  border: var(--border-button);
+  color: var(--text);
+
+  &.active {
+    text-decoration: underline;
+    color: $heliotrope;
+  }
+}
+
+.amount {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  display: none;
+  border-radius: 50%;
+  padding: 4px;
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--text);
+  background: $heliotrope-black;
+}
+
+.button {
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-filter-title);
+
+  position: relative;
+  border: 1px solid var(--border-button-modal);
+  border-radius: 60px;
+  padding: 6px 20px;
+  background: transparent;
+  transition: border 0.2s linear, color 0.2s linear;
+  cursor: pointer;
+
+  &.active {
+    border: 1px solid $heliotrope;
+    color: $heliotrope;
+  }
+
+  &.active .modal {
+    display: block;
+  }
+
+  &.active .amount {
+    display: block;
+  }
+}

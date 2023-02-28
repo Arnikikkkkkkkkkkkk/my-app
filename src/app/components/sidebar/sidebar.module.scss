@@ -1,0 +1,63 @@
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
+@import "/src/style/abstracts/animation";
+
+.personal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 0 15px;
+  opacity: 1;
+  gap: 16px;
+
+  &.skeleton {
+    opacity: 0;
+  }
+}
+
+.personal_name {
+  @include text($stratos, $font-weight-standard, $font-size-standard, var(--text), $line-height-link);
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  background-color: var(--image-track-background);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 240px 0 0;
+  height: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.item {
+  width: 250px;
+  height: 150px;
+
+  &.skeleton {
+    background: linear-gradient(45deg, var(--skeleton-background-start), var(--skeleton-background-end));
+    background-size: 200% 200%;
+    animation: gradient 2s linear infinite;
+  }
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+}

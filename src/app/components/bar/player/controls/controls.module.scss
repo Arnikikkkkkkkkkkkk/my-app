@@ -1,0 +1,37 @@
+@import "/src/style/abstracts/variables";
+
+.controls {
+  display: flex;
+  padding: 0 27px 0 31px;
+}
+
+.prev {
+  margin-right: 23px;
+}
+
+.play {
+  margin-right: 23px;
+}
+
+.next {
+  margin-right: 28px;
+}
+
+.repeat {
+  margin-right: 24px;
+}
+
+.shuffle {
+  display: flex;
+  align-items: center;
+}
+
+.prev,
+.play,
+.next,
+.repeat,
+.shuffle {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
